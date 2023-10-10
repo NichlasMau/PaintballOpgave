@@ -736,10 +736,9 @@ section {
 }
 
 .team .member .pic {
-  overflow: hidden;
-  height: 180px;
-  width: 180px;
-  border-radius: 50%;
+  height: 200px;
+  width: 200px;
+  border-radius: 100%;
 }
 
 .team .member .pic img {
