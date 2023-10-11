@@ -20,13 +20,15 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 </head>
 
 <body>
-
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top ">
     <div class="container d-flex align-items-center">
@@ -74,48 +76,136 @@
   <main id="main">
 
 
+    <!-- ======= Booking Popup Modal ====== -->
+    <div class="modal fade" id="bookingModal" tabindex="-1" role="dialog" aria-labelledby="bookingModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalCenterTitle">Booking</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="progress">
+              <div class="progress-bar" role="progressbar" style="width: 0; background-color: #E21818;"></div>
+            </div>
+            <form id="booking-form" class="modal-body">
+              <div class="page" data-page="1">
+                <h4 style="text-align: center;">Dato & tid </h3>
+                  <h6>Dato <h6>
+                      <div class="form-group mb-3">
+                        <input class="form-control" type="date" id="bk-date" name="datepicker" placeholder="Enter Date" />
+                      </div>
+                      <div class="form-group mb-3">
+                        <div class="row">
+                          <div class="col">
+                            <h6>Varighed:</h6>
+                            <select class="form-select" id="bk-length">
+                              <option value="30">30 minutes</option>
+                              <option value="60">1 hour</option>
+                              <option value="120">2 hours</option>
+                            </select>
+                          </div>
+                          <div class="col">
+                            <h6>Vælg din tid</h6>
+                            <select class="form-select" id="bk-time">
+                              <option value="10:00">10:00</option>
+                              <option value="10:30">10:30</option>
+                              <option value="11:00">11:00</option>
+                              <option value="11:30">11:30</option>
+                              <option value="12:00">12:00</option>
+                              <option value="12:30">12:30</option>
+                              <option value="13:00">13:00</option>
+                              <option value="13:30">13:30</option>
+                              <option value="14:00">14:00</option>
+                              <option value="14:30">14:30</option>
+                              <option value="15:00">15:00</option>
+                              <option value="15:30">15:30</option>
+                              <option value="16:00">16:00</option>
+                              <option value="16:30">16:30</option>
+                              <option value="17:00">17:00</option>
+                              <option value="17:30">17:30</option>
+                              <option value="18:00">18:00</option>
+                              <option value="18:30">18:30</option>
+                              <option value="19:00">19:00</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn modal-down-btn next">Næste</button>
+                      </div>
+              </div>
+              <div class="page" data-page="2">
+                <h4 style="text-align: center;">Kontakt informationer</h4>
+                <div class="form-group mb-3">
+                  <h6 for="name">Navn:</h6>
+                  <input type="text" id="bk-name" class="form-control" required>
+                </div>
+                <div class="form-group mb-3">
+                  <h6 for="participants">Deltagere:</h6>
+                  <input type="number" id="bk-participants" min="1" class="form-control" required>
+                </div>
+                <div class="form-group mb-3">
+                  <h6 for="email">Email:</h6>
+                  <input type="email" id="bk-email" class="form-control" required>
+                </div>
+                <div class="form-group mb-3">
+                  <h6 for="phone">Telefon nummer:</h6>
+                  <input type="tel" id="bk-phone" class="form-control" required>
+                </div>
+                <div class="form-group mb-3">
+                  <h6 for="comment">Kommentar (valgfrit):</h6>
+                  <textarea id="bk-comment" class="form-control"></textarea>
+                </div>
+                <div class="modal-footer mb-3">
+                  <button type="button" class="btn modal-down-btn-down prev">Tilbage</button>
+                  <button type="button" class="btn modal-down-btn next">Næste</button>
+                </div>
+              </div>
+              <!--
+              <div class="page" data-page="3">
+                <h4 style="text-align: center;">Ekstra udstyr (valgfrit)</h3>
+                  <div class="form-group mb-3">
+                    <select class="form-select" id="equipment">
+                      <option value="30">30 minutes</option>
+                      <option value="60">1 hour</option>
+                      <option value="120">2 hours</option>
+                    </select>
+                  </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn modal-down-btn-down prev">Tilbage</button>
+                  <button type="button" class="btn modal-down-btn next">Næste</button>
+                </div>
+              </div>
+              -->
+              <div class="page" data-page="3">
+                <h4 style="text-align: center;">Ordre bekræftelse </h3>
+                  <div class="modal-footer">
+                    <button type="button" class="btn modal-down-btn-down prev">Tilbage</button>
+                    <button type="submit" class="btn modal-down-btn">Bekræft Booking</button>
+                  </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Booking Popup Modal -->
+
+
     <!-- ======= Services Section ======= -->
     <section id="services" class="services section-bg">
-      <div class="container" data-aos="fade-up">
+      <div class="container" id="activities" data-aos="fade-up">
 
         <div class="section-title">
           <h2>Aktiviteter</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+          <p>Velkommen til vores actionfyldte eventcenter, hvor vi har en bred vifte af spændende aktiviteter, der vil give dig en uforglemmelig dag fyldt med sjov og adrenalin. Udforsk vores faciliteter og oplev det bedste inden for underholdning og konkurrence.</p>
         </div>
 
-        <div class="row">
-          <div class="col-xl-3 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
-            <div class="icon-box">
-              <div class="icon"><i class="bx bxl-dribbble"></i></div>
-              <h4><a href="">Paintball</a></h4>
-              <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
-            </div>
-          </div>
-
-          <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
-            <div class="icon-box">
-              <div class="icon"><i class="bx bx-file"></i></div>
-              <h4><a href="">Gokart</a></h4>
-              <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
-            </div>
-          </div>
-
-          <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in" data-aos-delay="300">
-            <div class="icon-box">
-              <div class="icon"><i class="bx bx-tachometer"></i></div>
-              <h4><a href="">Sumo Wrestling</a></h4>
-              <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
-            </div>
-          </div>
-
-          <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in" data-aos-delay="400">
-            <div class="icon-box">
-              <div class="icon"><i class="bx bx-layer"></i></div>
-              <h4><a href="">Mini-golf</a></h4>
-              <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
-            </div>
-          </div>
-
+        <div class="row" id="activity-cards">
+          <!-- Activity cards will be inserted here -->
         </div>
 
       </div>
@@ -482,7 +572,7 @@
                 <p>+1 5589 55488 55s</p>
               </div>
 
-              <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen></iframe>
+              <iframe frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen></iframe>
             </div>
 
           </div>
@@ -491,20 +581,20 @@
             <form action="forms/contact.php" method="post" role="form" class="php-email-form">
               <div class="row">
                 <div class="form-group col-md-6">
-                  <label for="name">Your Name</label>
+                  <h6 for="name">Your Name</label>
                   <input type="text" name="name" class="form-control" id="name" required>
                 </div>
                 <div class="form-group col-md-6">
-                  <label for="name">Your Email</label>
+                  <h6 for="name">Your Email</label>
                   <input type="email" class="form-control" name="email" id="email" required>
                 </div>
               </div>
               <div class="form-group">
-                <label for="name">Subject</label>
+                <h6 for="name">Subject</label>
                 <input type="text" class="form-control" name="subject" id="subject" required>
               </div>
               <div class="form-group">
-                <label for="name">Message</label>
+                <h6 for="name">Message</label>
                 <textarea class="form-control" name="message" rows="10" required></textarea>
               </div>
               <div class="my-3">
@@ -615,6 +705,9 @@
   
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/activities.js"></script>
+  <script src="assets/js/popup.js"></script>
+  <script src="assets/js/booking.js"></script>
 
 </body>
 
