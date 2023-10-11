@@ -668,7 +668,7 @@ section {
   font-weight: 700;
   margin-bottom: 5px;
   font-size: 20px;
-  color: #37517e;
+  color:#E21818;
 }
 
 .team .member span {
@@ -735,8 +735,8 @@ section {
 # Contact
 --------------------------------------------------------------*/
 .contact .info {
-  border-top: 3px solid #47b2e4;
-  border-bottom: 3px solid #47b2e4;
+  border-top: 3px solid #E21818;
+  border-bottom: 3px solid #E21818;
   padding: 30px;
   background: #fff;
   width: 100%;
@@ -745,7 +745,7 @@ section {
 
 .contact .info i {
   font-size: 20px;
-  color: #47b2e4;
+  color: #E21818;
   float: left;
   width: 44px;
   height: 44px;
@@ -796,21 +796,21 @@ section {
 }
 
 .contact .info .social-links a:hover {
-  background: #47b2e4;
+  background: #E21818;
   color: #fff;
 }
 
 .contact .info .email:hover i,
 .contact .info .address:hover i,
 .contact .info .phone:hover i {
-  background: #47b2e4;
+  background: #E21818;
   color: #fff;
 }
 
 .contact .php-email-form {
   width: 100%;
-  border-top: 3px solid #47b2e4;
-  border-bottom: 3px solid #47b2e4;
+  border-top: 3px solid #E21818;
+  border-bottom: 3px solid #E21818;
   padding: 30px;
   background: #fff;
   box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.12);
@@ -887,7 +887,7 @@ section {
 
 .contact .php-email-form input:focus,
 .contact .php-email-form textarea:focus {
-  border-color: #47b2e4;
+  border-color: #E21818;
 }
 
 .contact .php-email-form input {
@@ -899,7 +899,7 @@ section {
 }
 
 .contact .php-email-form button[type=submit] {
-  background: #47b2e4;
+  background: #E21818;
   border: 0;
   padding: 12px 34px;
   color: #fff;
@@ -908,7 +908,7 @@ section {
 }
 
 .contact .php-email-form button[type=submit]:hover {
-  background: #209dd8;
+  background: #000;
 }
 
 @keyframes animate-loading {
@@ -922,53 +922,11 @@ section {
 }
 
 /*--------------------------------------------------------------
-# Breadcrumbs
---------------------------------------------------------------*/
-.breadcrumbs {
-  padding: 15px 0;
-  background: #f3f5fa;
-  min-height: 40px;
-  margin-top: 72px;
-}
-
-@media (max-width: 992px) {
-  .breadcrumbs {
-    margin-top: 68px;
-  }
-}
-
-.breadcrumbs h2 {
-  font-size: 28px;
-  font-weight: 600;
-  color: #37517e;
-}
-
-.breadcrumbs ol {
-  display: flex;
-  flex-wrap: wrap;
-  list-style: none;
-  padding: 0 0 10px 0;
-  margin: 0;
-  font-size: 14px;
-}
-
-.breadcrumbs ol li+li {
-  padding-left: 10px;
-}
-
-.breadcrumbs ol li+li::before {
-  display: inline-block;
-  padding-right: 10px;
-  color: #4668a2;
-  content: "/";
-}
-
-/*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
 #footer {
   font-size: 14px;
-  background: #37517e;
+  background: #000;
 }
 
 #footer .footer-newsletter {
@@ -985,7 +943,7 @@ section {
   padding: 0;
   line-height: 1;
   font-weight: 600;
-  color: #37517e;
+  color: #E21818;
 }
 
 #footer .footer-newsletter form {
@@ -1013,7 +971,7 @@ section {
   background: none;
   font-size: 16px;
   padding: 0 20px;
-  background: #47b2e4;
+  background: #E21818;
   color: #fff;
   transition: 0.3s;
   border-radius: 50px;
@@ -1021,7 +979,7 @@ section {
 }
 
 #footer .footer-newsletter form input[type=submit]:hover {
-  background: #209dd8;
+  background: #000;
 }
 
 #footer .footer-top {
@@ -1034,13 +992,13 @@ section {
 }
 
 #footer .footer-top .footer-contact h3 {
-  font-size: 28px;
+  font-size: 20px;
   margin: 0 0 10px 0;
   padding: 2px 0 2px 0;
   line-height: 1;
   text-transform: uppercase;
   font-weight: 600;
-  color: #37517e;
+  color: #E21818;
 }
 
 #footer .footer-top .footer-contact p {
@@ -1048,13 +1006,13 @@ section {
   line-height: 24px;
   margin-bottom: 0;
   font-family: "Jost", sans-serif;
-  color: #5e5e5e;
+  color: #000;
 }
 
 #footer .footer-top h4 {
   font-size: 16px;
   font-weight: bold;
-  color: #37517e;
+  color: #E21818;
   position: relative;
   padding-bottom: 12px;
 }
@@ -1071,7 +1029,7 @@ section {
 
 #footer .footer-top .footer-links ul i {
   padding-right: 2px;
-  color: #47b2e4;
+  color: #E21818;
   font-size: 18px;
   line-height: 1;
 }
@@ -1095,28 +1053,12 @@ section {
 
 #footer .footer-top .footer-links ul a:hover {
   text-decoration: none;
-  color: #47b2e4;
+  color: #E21818;
 }
 
-#footer .footer-top .social-links a {
-  font-size: 18px;
-  display: inline-block;
-  background: #47b2e4;
-  color: #fff;
-  line-height: 1;
-  padding: 8px 0;
-  margin-right: 4px;
-  border-radius: 50%;
-  text-align: center;
-  width: 36px;
-  height: 36px;
-  transition: 0.3s;
-}
-
-#footer .footer-top .social-links a:hover {
-  background: #209dd8;
-  color: #fff;
-  text-decoration: none;
+#footer .footer-logo img {
+  height: 200px;
+  width: 200px;
 }
 
 #footer .footer-bottom {
@@ -1127,6 +1069,7 @@ section {
 
 #footer .copyright {
   float: left;
+  color: #E21818;
 }
 
 #footer .credits {
@@ -1136,6 +1079,7 @@ section {
 
 #footer .credits a {
   transition: 0.3s;
+  color: #E21818;
 }
 
 @media (max-width: 768px) {
