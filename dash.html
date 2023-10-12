@@ -6,7 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>AdventureXplorer Dashboard</title>
   <link rel="shortcut icon" type="image/png" href="../assets/images/logos/favicon.png" />
-  <link rel="stylesheet" href="assets/css/dashStyle.css">
+  <link rel="stylesheet" href="assets/css/dashStyleBootstrap.css">
+  <link rel="stylesheet" href="assets/css/dashMainStyle.css">
 </head>
 
 <body>
@@ -39,25 +40,33 @@
                 </span>            
                 <span class="hide-menu">Dashboard</span>
               </a>
-            </li>
+            </li>            
             <li class="nav-small-cap">
               <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
-              <span class="hide-menu">UI COMPONENTS</span>
+              <span class="hide-menu">Oversigt</span>
+            </li>
+            <li class="sidebar-item">
+              <a class="sidebar-link" href="./ui-typography.html" aria-expanded="false">
+                <span>
+                  <i class="ti ti-user"></i>
+                </span>
+                <span class="hide-menu">Alle medarbejder</span>
+              </a>
             </li>
             <li class="sidebar-item">
               <a class="sidebar-link" href="./ui-buttons.html" aria-expanded="false">
                 <span>
                   <i class="ti ti-article"></i>
                 </span>
-                <span class="hide-menu">Buttons</span>
+                <span class="hide-menu">Bookinger</span>
               </a>
             </li>
             <li class="sidebar-item">
               <a class="sidebar-link" href="./ui-alerts.html" aria-expanded="false">
                 <span>
-                  <i class="ti ti-alert-circle"></i>
+                  <i class="ti ti-layout-dashboard"></i>
                 </span>
-                <span class="hide-menu">Alerts</span>
+                <span class="hide-menu">Nye Aktiviteter</span>
               </a>
             </li>
             <li class="sidebar-item">
@@ -65,25 +74,17 @@
                 <span>
                   <i class="ti ti-cards"></i>
                 </span>
-                <span class="hide-menu">Card</span>
+                <span class="hide-menu">Registering af udstyr</span>
               </a>
             </li>
             <li class="sidebar-item">
               <a class="sidebar-link" href="./ui-forms.html" aria-expanded="false">
                 <span>
-                  <i class="ti ti-file-description"></i>
+                  <i class="ti ti-x"></i>
                 </span>
-                <span class="hide-menu">Forms</span>
+                <span class="hide-menu">Udstyr til reperation</span>
               </a>
-            </li>
-            <li class="sidebar-item">
-              <a class="sidebar-link" href="./ui-typography.html" aria-expanded="false">
-                <span>
-                  <i class="ti ti-typography"></i>
-                </span>
-                <span class="hide-menu">Typography</span>
-              </a>
-            </li>
+            </li>            
             <li class="nav-small-cap">
               <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
               <span class="hide-menu">AUTH</span>
@@ -93,7 +94,7 @@
                 <span>
                   <i class="ti ti-login"></i>
                 </span>
-                <span class="hide-menu">Login</span>
+                <span class="hide-menu">Alle Logins</span>
               </a>
             </li>
             <li class="sidebar-item">
@@ -101,7 +102,7 @@
                 <span>
                   <i class="ti ti-user-plus"></i>
                 </span>
-                <span class="hide-menu">Register</span>
+                <span class="hide-menu">Registrere medarbejder</span>
               </a>
             </li>                 
         </nav>
@@ -137,19 +138,11 @@
                 </a>
                 <div class="dropdown-menu dropdown-menu-end dropdown-menu-animate-up" aria-labelledby="drop2">
                   <div class="message-body">
-                    <a href="javascript:void(0)" class="d-flex align-items-center gap-2 dropdown-item">
+                    <a href="dash.html" class="d-flex align-items-center gap-2 dropdown-item">
                       <i class="ti ti-user fs-6"></i>
                       <p class="mb-0 fs-3">Min profil</p>
-                    </a>
-                    <a href="javascript:void(0)" class="d-flex align-items-center gap-2 dropdown-item">
-                      <i class="ti ti-mail fs-6"></i>
-                      <p class="mb-0 fs-3">Indbakke</p>
-                    </a>
-                    <a href="javascript:void(0)" class="d-flex align-items-center gap-2 dropdown-item">
-                      <i class="ti ti-currency-dollar fs-6"></i>
-                      <p class="mb-0 fs-3">Økonomi</p>
-                    </a>
-                    <a href="index.html" class="btn btn-outline-primary mx-3 mt-2 d-block">Logout</a>
+                    </a>                  
+                    <a href="index.html" class="btn btn-outline-primary mx-3 mt-2 d-block">Log ud</a>
                   </div>
                 </div>
               </li>
@@ -504,7 +497,7 @@
           </div>
         </div>
         <div class="py-6 px-6 text-center">
-          <p class="mb-0 fs-4">Design and Developed by <a href="https://adminmart.com/" target="_blank" class="pe-1 text-primary text-decoration-underline">AdminMart.com</a> Distributed by <a href="https://themewagon.com">ThemeWagon</a></p>
+          <p class="mb-0 fs-4">Design and Developed by <a href="https://perceptual.dk/" target="_blank" class="pe-1 text-primary text-decoration-underline">Perceptual</a></p>
         </div>
       </div>
     </div>
