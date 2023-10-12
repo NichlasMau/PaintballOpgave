@@ -82,8 +82,7 @@
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" id="exampleModalCenterTitle">Booking</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
+            <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">
             </button>
           </div>
           <div class="modal-body">
@@ -95,21 +94,21 @@
                 <h4 style="text-align: center;">Dato & tid </h3>
                   <h6>Dato <h6>
                       <div class="form-group mb-3">
-                        <input class="form-control" type="date" id="bk-date" name="datepicker" placeholder="Enter Date" />
+                        <input class="form-control" type="date" id="bk-date" name="datepicker" placeholder="Enter Date" required/>
                       </div>
                       <div class="form-group mb-3">
                         <div class="row">
                           <div class="col">
                             <h6>Varighed:</h6>
-                            <select class="form-select" id="bk-length">
-                              <option value="30">30 minutes</option>
-                              <option value="60">1 hour</option>
-                              <option value="120">2 hours</option>
+                            <select class="form-select" id="bk-length" required>
+                              <option value="30">30 minutter</option>
+                              <option value="60">1 time</option>
+                              <option value="120">2 timer</option>
                             </select>
                           </div>
                           <div class="col">
                             <h6>Vælg din tid</h6>
-                            <select class="form-select" id="bk-time">
+                            <select class="form-select" id="bk-time" required>
                               <option value="10:00">10:00</option>
                               <option value="10:30">10:30</option>
                               <option value="11:00">11:00</option>
@@ -152,8 +151,14 @@
                   <input type="email" id="bk-email" class="form-control" required>
                 </div>
                 <div class="form-group mb-3">
-                  <h6 for="phone">Telefon nummer:</h6>
-                  <input type="tel" id="bk-phone" class="form-control" required>
+                  <h6 for="phone">Telefon:</h6>
+                  <input type="text" id="bk-phone" class="form-control" required oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                </div>
+                <div class="form-group mb-3">
+                  <h6 for="packages" id="package-text">Pakke:</h6>
+                  <select class="form-select" id="packages">
+                    <option></option>
+                  </select>
                 </div>
                 <div class="form-group mb-3">
                   <h6 for="comment">Kommentar (valgfrit):</h6>
@@ -164,14 +169,18 @@
                   <button type="button" class="btn modal-down-btn next">Næste</button>
                 </div>
               </div>
-              <!--
               <div class="page" data-page="3">
-                <h4 style="text-align: center;">Ekstra udstyr (valgfrit)</h3>
+                <h4 style="text-align: center;">Ekstra udstyr (valgfrit)</h4>
                   <div class="form-group mb-3">
+                    <h6 for="comment">Udstyr:</h6>
                     <select class="form-select" id="equipment">
-                      <option value="30">30 minutes</option>
-                      <option value="60">1 hour</option>
-                      <option value="120">2 hours</option>
+                      <option></option>
+                    </select>
+                  </div>
+                  <div class="form-group mb-3">
+                    <h6 for="comment">Antal:</h6>
+                    <select class="form-select" id="equipment_amount">
+                      <option></option>
                     </select>
                   </div>
                 <div class="modal-footer">
@@ -179,13 +188,20 @@
                   <button type="button" class="btn modal-down-btn next">Næste</button>
                 </div>
               </div>
-              -->
-              <div class="page" data-page="3">
-                <h4 style="text-align: center;">Ordre bekræftelse </h3>
+              <div class="page" data-page="4">
+                <h4 style="text-align: center;">Ordre bekræftelse </h4>
+                  <div id="booking-overview"></div>
                   <div class="modal-footer">
                     <button type="button" class="btn modal-down-btn-down prev">Tilbage</button>
                     <button type="submit" class="btn modal-down-btn">Bekræft Booking</button>
                   </div>
+              </div>
+              <div class="page" data-page="5">
+                <div class="success-animation">
+                  <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52"><circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none" /><path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8" /></svg>
+                  </div>
+                <h4 style="text-align: center;">Booking bekræftet!</h4>
+                <p style="text-align: center;">Vi har sendt en ordrebekræftelse på mail med flere informationer omkring aktiviteten.</p>
               </div>
             </form>
           </div>
