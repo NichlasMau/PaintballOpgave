@@ -1,3 +1,9 @@
+import { calculateTotalPrice, calculateTotalPriceEquip } from './price.js';
+
+var activitySelId = null;
+$('#activity-cards').on('click', '.booking-btn', function() {
+    activitySelId = $(this).data('activity-id');
+});
 document.getElementById("booking-form").addEventListener("submit", function (event) {
     event.preventDefault();
 
@@ -18,11 +24,11 @@ document.getElementById("booking-form").addEventListener("submit", function (eve
         time: formattedTime,
         duration: document.getElementById("bk-length").value,
         comment: document.getElementById("bk-comment").value,
-        activityId: 1,
-        total: 100
+        activityId: activitySelId,
+        total: calculateTotalPriceEquip()
+
     };
 
-    console.log(bookingData)
     var progressBar = $(".progress-bar");
 
     $.ajax({

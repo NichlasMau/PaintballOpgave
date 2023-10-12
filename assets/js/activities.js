@@ -8,7 +8,7 @@ function createActivityCard(activity) {
           <h4><a href="#">${activity.name}</a></h4>
           <p>${activity.description}</p>
       </div>
-      <a class="booking-btn" data-toggle="modal" data-target="#bookingModal" data-activity-name="${activity.name}">Book</a>
+      <a class="booking-btn" data-toggle="modal" data-target="#bookingModal" data-activity-name="${activity.name}" data-activity-id="${activity.id}">Book</a>
     </div>
   `;
   
