@@ -1,39 +1,32 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const emailInput = document.getElementById('emailInput'); // Replace with the actual element
-    const passwordInput = document.getElementById('passwordInput'); // Replace with the actual element
-    const errorDiv = document.getElementById('errorDiv'); // Replace with the actual element
+document.addEventListener('DOMContentLoaded', function() {
+    const loginForm = document.getElementById('login-form');
+    const errorDiv = document.getElementById('error-message');
 
-    const formData = new URLSearchParams();
-    formData.append('email', emailInput.value);
-    formData.append('password', passwordInput.value);
+    loginForm.addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent the default form submission behavior
 
-    fetch('https://adventurexpwebapp.azurewebsites.net/login', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/x-www-form-urlencoded',
-        },
-        body: formData,
-    })
+        // Get the form data
+        const formData = new FormData(loginForm);
+
+        fetch('https://adventurexpwebapp.azurewebsites.net/login', {
+            method: 'POST',
+            body: formData,
+        })
         .then((response) => {
             if (response.status === 200) {
-                return response.text(); // Assuming your server sends a plain text response
-            } else if (response.status === 401) {
-                throw new Error('Unauthorized');
-            } else {
-                throw new Error('Failed to log in');
-            }
+                return response.text(); // Read the response as plain text
+            } 
         })
         .then((data) => {
             // Handle the response here
             if (data === 'Success') {
-                // Successful login
-                window.location.href = '/dash.html';
+                window.location.href = '/dash.html  ';
             } else {
-                errorDiv.innerText = 'Ugyldigt login. Prøv igen.';
+                errorDiv.innerText = 'Invalid login. Please try again.';
             }
         })
         .catch((error) => {
             console.error('Error:', error);
         });
-
-})
+    });
+});

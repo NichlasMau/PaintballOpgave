@@ -1,4 +1,4 @@
-import { calculateTotalPrice, calculateTotalPriceEquip } from './price.js';
+import { calculateTotalPrice, calculateDiscount, calculateFinalPrice, calculateTotalPriceEquip } from 'price.js';
 
 $(document).ready(function() {
     var totalPages = $(".page").length;
@@ -6,6 +6,7 @@ $(document).ready(function() {
     var max_page = 4;
     var progressBar = $(".progress-bar");
     var activityName = null;
+    var minAge = 0;
   
     document.getElementById('bk-date').min = new Date().toISOString().split('T')[0];
   
@@ -46,16 +47,28 @@ $(document).ready(function() {
     function validatePage(page) {
       const currentPage = document.querySelector(`[data-page="${page}"]`);
       const requiredFields = currentPage.querySelectorAll('[required]');
+      const checkbox = currentPage.querySelector('[type="checkbox"]');
       let isValid = true;
   
       requiredFields.forEach(field => {
         if (!field.value) {
           isValid = false;
           field.classList.add('is-invalid');
+          
         } else {
           field.classList.remove('is-invalid');
         }
       });
+
+      
+      if (checkbox) {
+        if (!checkbox.checked) {
+          isValid = false;
+          checkbox.classList.add('is-invalid');
+        } else {
+          checkbox.classList.remove('is-invalid');
+        }
+      }
   
       return isValid;
     }
@@ -82,6 +95,8 @@ $(document).ready(function() {
   
     $('#activity-cards').on('click', '.booking-btn', function() {
       activityName = $(this).data('activity-name');
+      minAge = $(this).data('activity-minage');
+
       $('.modal-title').text('Booking af ' + activityName);
   
       const select = $('[data-page="3"] select#equipment');
@@ -99,6 +114,9 @@ $(document).ready(function() {
       const packages = $('[data-page="2"] select#packages');
       const packagesText = $('[data-page="2"] #package-text');
       packages.html('')
+
+      const minAgeText = $('[data-page="2"] #minAgeText');
+      minAgeText.html(`Jeg bekræfter at alle deltagere er over ${minAge} år gammel.`)
 
       if (activityName === 'Paintball') {
         packages.append('<option value="195">Basispakke: 2 timer inkl. 100 kugler (195 kr)</option>');
@@ -122,8 +140,10 @@ $(document).ready(function() {
         const bkComment = document.getElementById("bk-comment").value;
         const equipment = $("#equipment option:selected").text();
         const equipmentAmount = $("#equipment_amount option:selected").text();
+        const totalDiscount = calculateDiscount();
         const totalPrice = calculateTotalPrice();
         const totalPriceEquip = calculateTotalPriceEquip();
+        const totalPriceFinal = calculateFinalPrice();
 
       
         const overviewHTML = `
@@ -160,7 +180,7 @@ $(document).ready(function() {
           <h5 style="text-align: center">Prisoversigt</h5>
           <table class="table">
             <tr>
-                <td><strong>${bkParticipants}x person(er) (${totalPrice/bkParticipants} kr)</strong></td>
+                <td><strong>${bkParticipants}x person(er) ${bkLength} (${totalPrice/bkParticipants} kr)</strong></td>
                 <td>${totalPrice} DKK</td>
             </tr>
             ${equipmentAmount > 0 ? `
@@ -168,9 +188,15 @@ $(document).ready(function() {
                 <td><strong>${equipment ? (equipmentAmount + 'x ' + equipment) : 'Ingen'}</strong></td>
                 <td>${equipmentAmount * (totalPriceEquip - totalPrice)/equipmentAmount} DKK</td>
             </tr>` : ''}
+            ${totalDiscount > 0 ? `
+            <tr>
+                <td><strong>${bkParticipants}x 50kr rabat (10-14 tidszone)</strong></td>
+                <td>-${totalDiscount} DKK</td>
+            </tr>
+          ` : ''}
             <tr>
                 <td><strong>Total Pris:</strong></td>
-                <td><strong>${totalPriceEquip} DKK</strong></td>
+                <td><strong>${totalPriceFinal} DKK</strong></td>
             </tr>
           </table>
         `;

@@ -1,4 +1,4 @@
-import { calculateTotalPrice, calculateTotalPriceEquip } from './price.js';
+import { calculateFinalPrice } from 'price.js';
 
 var activitySelId = null;
 $('#activity-cards').on('click', '.booking-btn', function() {
@@ -25,8 +25,7 @@ document.getElementById("booking-form").addEventListener("submit", function (eve
         duration: document.getElementById("bk-length").value,
         comment: document.getElementById("bk-comment").value,
         activityId: activitySelId,
-        total: calculateTotalPriceEquip()
-
+        total: calculateFinalPrice()
     };
 
     var progressBar = $(".progress-bar");

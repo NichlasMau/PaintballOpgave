@@ -11,14 +11,14 @@
 <body>
 <div class="main">
     <div class="container">
-        <form action="/login" method="POST">
+        <p id="error-message"></p>
+        <form id="login-form" action="/login" method="POST">
             <label for="email">Email</label>
             <input type="text" id="email" name="email" placeholder="Email">
             <label for="password">Kodeord</label>
             <input type="password" id="password" name="password" placeholder="Kodeord">
             <button type="submit">Log ind</button>
         </form>
-        <div id="error-message"></div>
     </div>
 </div>
 </body>
