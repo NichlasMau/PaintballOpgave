@@ -30,7 +30,6 @@ document.addEventListener("DOMContentLoaded", function () {
             .then((response) => response.json())
             .then((data) => {
                 if (data.auth) {
-                    // Authentication successful, redirect to the dashboard
                     window.location.href = "/dash";
                 } else {
                     errorDiv.innerText = "Ugyldigt login. Prøv igen.";
