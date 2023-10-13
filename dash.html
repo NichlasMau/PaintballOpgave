@@ -45,7 +45,7 @@
               <span class="hide-menu">Oversigt</span>
             </li>
             <li class="sidebar-item">
-              <a class="sidebar-link" href="./ui-typography.html" aria-expanded="false">
+              <a class="sidebar-link" href="#medArb" aria-expanded="false">
                 <span>
                   <i class="ti ti-user"></i>
                 </span>
@@ -53,7 +53,7 @@
               </a>
             </li>
             <li class="sidebar-item">
-              <a class="sidebar-link" href="./ui-buttons.html" aria-expanded="false">
+              <a class="sidebar-link" href="#book" aria-expanded="false">
                 <span>
                   <i class="ti ti-article"></i>
                 </span>
@@ -61,7 +61,7 @@
               </a>
             </li>
             <li class="sidebar-item">
-              <a class="sidebar-link" href="./ui-alerts.html" aria-expanded="false">
+              <a class="sidebar-link" href="#aktiv" aria-expanded="false">
                 <span>
                   <i class="ti ti-layout-dashboard"></i>
                 </span>
@@ -69,7 +69,7 @@
               </a>
             </li>
             <li class="sidebar-item">
-              <a class="sidebar-link" href="./ui-card.html" aria-expanded="false">
+              <a class="sidebar-link" href="#udstyr" aria-expanded="false">
                 <span>
                   <i class="ti ti-cards"></i>
                 </span>
@@ -77,33 +77,13 @@
               </a>
             </li>
             <li class="sidebar-item">
-              <a class="sidebar-link" href="./ui-forms.html" aria-expanded="false">
+              <a class="sidebar-link" href="#udstyrRep" aria-expanded="false">
                 <span>
                   <i class="ti ti-x"></i>
                 </span>
                 <span class="hide-menu">Udstyr til reperation</span>
               </a>
-            </li>            
-            <li class="nav-small-cap">
-              <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
-              <span class="hide-menu">AUTH</span>
-            </li>
-            <li class="sidebar-item">
-              <a class="sidebar-link" href="./authentication-login.html" aria-expanded="false">
-                <span>
-                  <i class="ti ti-login"></i>
-                </span>
-                <span class="hide-menu">Alle Logins</span>
-              </a>
-            </li>
-            <li class="sidebar-item">
-              <a class="sidebar-link" href="./authentication-register.html" aria-expanded="false">
-                <span>
-                  <i class="ti ti-user-plus"></i>
-                </span>
-                <span class="hide-menu">Registrere medarbejder</span>
-              </a>
-            </li>                 
+            </li>                                 
         </nav>
         <!-- End Sidebar navigation -->
       </div>
@@ -154,7 +134,7 @@
             <div class="card w-100">
               <div class="card-body">
                 <h1>Oversigt over medarbejdere</h1>
-                <table class="table table-bordered">
+                <table class="table table-bordered" id="medArb">
                     <thead>
                         <tr>
                             <th>ID</th>
@@ -169,63 +149,90 @@
             </div>
             </div>
           </div>
-          <div class="col-lg-14 d-flex align-items-strech">
-            <div class="card w-100">
-              <div class="card-body">
-                <h1>Alle bookinger</h1>
-                <table class="table table-bordered">
-                    <thead>
-                        <tr>
-                            <th>BookingNr.</th>
-                            <th>Navn</th>
-                            <th>Deltager</th>
-                            <th>Email</th>
-                            <th>Telefon</th>
-                            <th>Date</th>
-                            <th>Tidspunkt</th>                            
-                            <th>Comment</th>
-                            <th>Beskeder</th>
-                            <th>Enheder</th>
-                            <th>Pris</th>
-                        </tr>
-                    </thead>
-                    <tbody id="booking-table-body">
-                        <!-- Booking data will be inserted here -->
-                    </tbody>
-                </table>
-            </div>
-            </div>
-          </div>
-          <div class="col-lg-14 d-flex align-items-strech">
-            <div class="card w-100">
-              <div class="card-body">                
-                <h1>Aktiviteter</h1>    
-                
-                <!-- Her skal der en fetch på alle medarbejder -->
-
+        </div>        
+          <!--  Row 2 -->
+          <div class="row" id="book">
+            <div class="col-lg-14 d-flex align-items-strech">
+              <div class="card w-100">
+                <div class="card-body">
+                  <h1>Alle bookinger</h1>
+                  <table class="table table-bordered">
+                      <thead>
+                          <tr>
+                              <th>BookingNr.</th>
+                              <th>Navn</th>
+                              <th>Deltager</th>
+                              <th>Email</th>
+                              <th>Telefon</th>
+                              <th>Date</th>
+                              <th>Tidspunkt</th>                            
+                              <th>Længde</th>
+                              <th>Beskeder</th>
+                              <th>Enheder</th>
+                              <th>Pris</th>
+                          </tr>
+                      </thead>
+                      <tbody id="booking-table-body">
+                          <!-- Booking data will be inserted here -->
+                      </tbody>
+                  </table>
+              </div>
               </div>
             </div>
           </div>
-          <div class="col-lg-14 d-flex align-items-strech">
-            <div class="card w-100">
-              <div class="card-body">                
-                <h1>Udstyr</h1>    
-                
-                <!-- Her skal der en fetch på alle medarbejder -->
 
+          <!--  Row 3 -->
+          <div class="row" id="aktiv">
+            <div class="col-lg-14 d-flex align-items-strech">
+              <div class="card w-100">
+                <div class="card-body">
+                  <h1>Aktiviteter</h1>
+                  <table class="table table-bordered">
+                      <thead>
+                          <tr>
+                              <th>ID</th>
+                              <th>Navn</th>
+                              <th>Beskrivelse</th>
+                              <th>Aldersgrænser</th>
+                              <th>Priser</th>
+                          </tr>
+                      </thead>
+                      <tbody id="activity-table-body">
+                          <!-- Activity data will be inserted here -->
+                      </tbody>
+                  </table>
+              </div>
               </div>
             </div>
           </div>
-          <div class="col-lg-14 d-flex align-items-strech">
-            <div class="card w-100">
-              <div class="card-body">                
-                <h1>Udstyr til reperation</h1>    
-                
-                <!-- Her skal der en fetch på alle medarbejder -->
 
+          <!--  Row 5 -->
+          <div class="row" id="udstyr">
+            <div class="col-lg-14 d-flex align-items-strech">
+              <div class="card w-100">
+                <div class="card-body">                
+                  <h1>Udstyr</h1>    
+                  
+                  <!-- Her skal der en fetch på alle medarbejder -->
+  
+                </div>
               </div>
             </div>
-          </div>        
+          </div>
+
+          <!--  Row 6 -->
+          <div class="row" id="udstyrRep">
+            <div class="col-lg-14 d-flex align-items-strech">
+              <div class="card w-100">
+                <div class="card-body">                
+                  <h1>Udstyr til reperation</h1>    
+                  
+                  <!-- Her skal der en fetch på alle medarbejder -->
+  
+                </div>
+              </div>
+            </div>
+          </div>                    
         </div>
         <div class="py-6 px-6 text-center">
           <p class="mb-0 fs-4">Design and Developed by <a href="https://perceptual.dk/" target="_blank" class="pe-1 text-primary text-decoration-underline">Perceptual</a></p>

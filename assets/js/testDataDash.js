@@ -1,10 +1,13 @@
     // Define the URL to fetch data from
     var employeeUrl = "https://adventurexpwebapp.azurewebsites.net/employees";
     var bookingUrl = "https://adventurexpwebapp.azurewebsites.net/bookings";
+    var activityUrl = "https://adventurexpwebapp.azurewebsites.net/activities";
 
     // Get references to the table bodies
     var employeeTableBody = document.getElementById("employee-table-body");
     var bookingTableBody = document.getElementById("booking-table-body");
+    var activityTableBody = document.getElementById("activity-table-body");
+
 
     // Function to populate employee data
     function populateEmployeeData() {
@@ -51,7 +54,26 @@ function populateBookingData() {
         });
 }
 
+function populateActivityData() {
+    fetch(activityUrl)
+        .then(function(response) {
+            return response.json();
+        })
+        .then(function(activities) {
+            activities.forEach(function(activity) {
+                var row = document.createElement("tr");
+                row.innerHTML = "<td>" + activity.id + "</td><td>" + activity.name + "</td><td>" + activity.description + "</td><td>" + activity.minAge + "</td><td>" + activity.price + "</td>";
+                activityTableBody.appendChild(row);
+            });
+        })
+        .catch(function(error) {
+            console.error("Error fetching activity data:", error);
+        });
+}
+
 
     // Call the functions to populate data
     populateEmployeeData();
     populateBookingData();
+    populateActivityData();
+

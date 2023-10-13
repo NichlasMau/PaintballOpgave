@@ -6204,6 +6204,7 @@ fieldset:disabled .btn {
     padding: var(--bs-card-spacer-y) var(--bs-card-spacer-x);
     color: var(--bs-card-color);
     font-size: 10px;
+    min-height: 85vh;
 }
 
 .card-body h1 {
@@ -19774,7 +19775,7 @@ fieldset:disabled .btn {
 }
 
 .sidebar-nav ul .sidebar-item .sidebar-link {
-    color: #2A3547;
+    color: #000;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -19876,8 +19877,7 @@ fieldset:disabled .btn {
 .sidebar-nav ul .sidebar-item.selected>.sidebar-link,
 .sidebar-nav ul .sidebar-item.selected>.sidebar-link.active,
 .sidebar-nav ul .sidebar-item>.sidebar-link.active {
-    background-color: #E21818;
-    color: #fff
+    
 }
 
 .sidebar-nav .sidebar-list .sidebar-list-item {
